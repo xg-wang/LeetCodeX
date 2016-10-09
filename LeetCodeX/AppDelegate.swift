@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import DrawerController
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow()
+        self.window?.frame = UIScreen.main.bounds
+        self.window?.makeKeyAndVisible()
+        
+        let centerNav   = LCXNavigationController(rootViewController: HomeViewController())
+        let leftVC      = LeftViewController()
+        let rightVC     = RightViewController()
+        let drawerController = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftVC, rightDrawerViewController: rightVC)
+        
+        drawerController.openDrawerGestureModeMask  = .panningCenterView
+        drawerController.closeDrawerGestureModeMask = .all
+        self.window?.rootViewController = drawerController
+        
+        LCXClient.sharedInstance.drawerController = drawerController
+        LCXClient.sharedInstance.centerNC = centerNav
+        LCXClient.sharedInstance.centerVC = centerNav.viewControllers.first as? HomeViewController
+        
+        SVProgressHUD.setForegroundColor(UIColor(white: 1, alpha: 1))
+        SVProgressHUD.setBackgroundColor(UIColor(white: 0.15, alpha: 0.85))
+        
         return true
     }
 

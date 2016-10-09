@@ -13,6 +13,11 @@
 		53CC00101DAAABD2008E3223 /* LeetCodeX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53CC000E1DAAABD2008E3223 /* LeetCodeX.xcdatamodeld */; };
 		53CC00121DAAABD2008E3223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CC00111DAAABD2008E3223 /* Assets.xcassets */; };
 		53CC00151DAAABD2008E3223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CC00131DAAABD2008E3223 /* LaunchScreen.storyboard */; };
+		53CC00241DAAF600008E3223 /* LCXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00231DAAF600008E3223 /* LCXNavigationController.swift */; };
+		53CC00261DAAF683008E3223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00251DAAF683008E3223 /* HomeViewController.swift */; };
+		53CC00281DAAF777008E3223 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00271DAAF777008E3223 /* LeftViewController.swift */; };
+		53CC002A1DAAF785008E3223 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00291DAAF785008E3223 /* RightViewController.swift */; };
+		53CC002C1DAAF979008E3223 /* LCXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC002B1DAAF979008E3223 /* LCXClient.swift */; };
 		AAE654DC8F62BBC6FF435915 /* Pods_LeetCodeX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +31,11 @@
 		53CC00111DAAABD2008E3223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53CC00141DAAABD2008E3223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53CC00161DAAABD2008E3223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53CC00231DAAF600008E3223 /* LCXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXNavigationController.swift; sourceTree = "<group>"; };
+		53CC00251DAAF683008E3223 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		53CC00271DAAF777008E3223 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		53CC00291DAAF785008E3223 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		53CC002B1DAAF979008E3223 /* LCXClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXClient.swift; sourceTree = "<group>"; };
 		90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeetCodeX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				53CC00071DAAABD2008E3223 /* AppDelegate.swift */,
+				53CC00231DAAF600008E3223 /* LCXNavigationController.swift */,
 				53CC00091DAAABD2008E3223 /* ViewController.swift */,
 				53CC000B1DAAABD2008E3223 /* Main.storyboard */,
 				53CC00111DAAABD2008E3223 /* Assets.xcassets */,
@@ -64,13 +75,57 @@
 			path = LeetCodeX;
 			sourceTree = "<group>";
 		};
+		53CC001E1DAAF36C008E3223 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				53CC002B1DAAF979008E3223 /* LCXClient.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		53CC001F1DAAF36C008E3223 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				53CC00251DAAF683008E3223 /* HomeViewController.swift */,
+				53CC00271DAAF777008E3223 /* LeftViewController.swift */,
+				53CC00291DAAF785008E3223 /* RightViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		53CC00201DAAF36C008E3223 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53CC00211DAAF36C008E3223 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53CC00221DAAF36C008E3223 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		53CCFFFB1DAAABD2008E3223 = {
 			isa = PBXGroup;
 			children = (
+				53CC001E1DAAF36C008E3223 /* Common */,
+				53CC001F1DAAF36C008E3223 /* Controllers */,
+				53CC00201DAAF36C008E3223 /* Models */,
+				53CC00211DAAF36C008E3223 /* Resources */,
+				53CC00221DAAF36C008E3223 /* Views */,
 				53CC00061DAAABD2008E3223 /* LeetCodeX */,
 				53CC00051DAAABD2008E3223 /* Products */,
-				7AD24072DBD9FF2E66378AC2 /* Pods */,
 				F28981E73FF113068E42A8F5 /* Frameworks */,
+				7AD24072DBD9FF2E66378AC2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,9 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53CC002C1DAAF979008E3223 /* LCXClient.swift in Sources */,
+				53CC00261DAAF683008E3223 /* HomeViewController.swift in Sources */,
+				53CC002A1DAAF785008E3223 /* RightViewController.swift in Sources */,
 				53CC000A1DAAABD2008E3223 /* ViewController.swift in Sources */,
 				53CC00081DAAABD2008E3223 /* AppDelegate.swift in Sources */,
+				53CC00281DAAF777008E3223 /* LeftViewController.swift in Sources */,
 				53CC00101DAAABD2008E3223 /* LeetCodeX.xcdatamodeld in Sources */,
+				53CC00241DAAF600008E3223 /* LCXNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
