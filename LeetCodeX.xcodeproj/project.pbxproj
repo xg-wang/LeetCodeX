@@ -13,9 +13,11 @@
 		53CC00101DAAABD2008E3223 /* LeetCodeX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53CC000E1DAAABD2008E3223 /* LeetCodeX.xcdatamodeld */; };
 		53CC00121DAAABD2008E3223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CC00111DAAABD2008E3223 /* Assets.xcassets */; };
 		53CC00151DAAABD2008E3223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CC00131DAAABD2008E3223 /* LaunchScreen.storyboard */; };
+		AAE654DC8F62BBC6FF435915 /* Pods_LeetCodeX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1125882308A888610E9FC681 /* Pods-LeetCodeX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.debug.xcconfig"; sourceTree = "<group>"; };
 		53CC00041DAAABD2008E3223 /* LeetCodeX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCodeX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CC00071DAAABD2008E3223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CC00091DAAABD2008E3223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		53CC00111DAAABD2008E3223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53CC00141DAAABD2008E3223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53CC00161DAAABD2008E3223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeetCodeX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE654DC8F62BBC6FF435915 /* Pods_LeetCodeX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +69,26 @@
 			children = (
 				53CC00061DAAABD2008E3223 /* LeetCodeX */,
 				53CC00051DAAABD2008E3223 /* Products */,
+				7AD24072DBD9FF2E66378AC2 /* Pods */,
+				F28981E73FF113068E42A8F5 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		7AD24072DBD9FF2E66378AC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1125882308A888610E9FC681 /* Pods-LeetCodeX.debug.xcconfig */,
+				A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F28981E73FF113068E42A8F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53CC00191DAAABD2008E3223 /* Build configuration list for PBXNativeTarget "LeetCodeX" */;
 			buildPhases = (
+				E9EB041A21725DCABDE6E0D1 /* [CP] Check Pods Manifest.lock */,
 				53CC00001DAAABD2008E3223 /* Sources */,
 				53CC00011DAAABD2008E3223 /* Frameworks */,
 				53CC00021DAAABD2008E3223 /* Resources */,
+				7DE5D5EB09D9989B19C03190 /* [CP] Embed Pods Frameworks */,
+				BD70001E6B4F163532E66972 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,6 +161,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7DE5D5EB09D9989B19C03190 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD70001E6B4F163532E66972 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9EB041A21725DCABDE6E0D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53CC00001DAAABD2008E3223 /* Sources */ = {
@@ -263,6 +338,7 @@
 		};
 		53CC001A1DAAABD2008E3223 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1125882308A888610E9FC681 /* Pods-LeetCodeX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4K2JB5Z92M;
@@ -276,6 +352,7 @@
 		};
 		53CC001B1DAAABD2008E3223 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4K2JB5Z92M;
@@ -297,6 +374,7 @@
 				53CC001B1DAAABD2008E3223 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53CCFFFF1DAAABD2008E3223 /* Build configuration list for PBXProject "LeetCodeX" */ = {
 			isa = XCConfigurationList;
