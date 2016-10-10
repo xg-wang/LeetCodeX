@@ -45,7 +45,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func setupNavigationItem() {
-        // TODO
+        let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        leftButton.contentMode = .center
+        leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0)
+        leftButton.setImage(UIImage(named: "ic_menu_36pt")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+        leftButton.addTarget(self, action: #selector(HomeViewController.leftClick), for: .touchUpInside)
+        
+        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightButton.contentMode = .center
+        rightButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -15)
+        rightButton.setImage(UIImage(named: "ic_more_horiz_36pt")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        rightButton.addTarget(self, action: #selector(HomeViewController.rightClick), for: .touchUpInside)
+    }
+    @objc fileprivate func leftClick() {
+        LCXClient.sharedInstance.drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
+    }
+    @objc fileprivate func rightClick() {
+        LCXClient.sharedInstance.drawerController?.toggleRightDrawerSide(animated: true, completion: nil)
     }
     
     func refresh() {
