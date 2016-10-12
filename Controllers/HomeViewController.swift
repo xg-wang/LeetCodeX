@@ -11,9 +11,9 @@ import SnapKit
 import MJRefresh
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var tab: String?
+    var category: String?
     var page = 0
-    var questionList: [QuestionModel]?
+    var questionList: [QuestionListModel]?
 
     private var _tableview: UITableView!
     private var tableview: UITableView {
@@ -42,6 +42,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             [weak self] () -> Void in
             self?.refresh()
         })
+        refreshLists()
     }
     
     func setupNavigationItem() {
@@ -59,6 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(HomeViewController.rightClick), for: .touchUpInside)
     }
+    
     @objc fileprivate func leftClick() {
         LCXClient.sharedInstance.drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
     }
@@ -67,18 +69,44 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func refresh() {
-        // TODO
+        if category == nil {
+            category = "oj"
+        }
+        QuestionListModel.requestList(category: category!) {
+            (response: LCXValueResponse<[QuestionListModel]>) -> Void in
+            if response.success {
+                self.questionList = response.value
+                self.tableview.reloadData()
+                self.page = 0
+            }
+            self.tableview.mj_header.endRefreshing()
+        }
+    }
+    func refreshLists() {
+        tableview.mj_header.beginRefreshing()
     }
     
     // MARK - UITableView Protocals
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO
-        return 1
+        if let questions = questionList {
+            return questions.count
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionListTableViewCell.description(), for: indexPath)
-        // TODO: data binding
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionListTableViewCell.description(), for: indexPath) as! QuestionListTableViewCell
+        cell.bind(question: questionList![indexPath.row])
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let question = questionList?[indexPath.row]
+        if let qurl = question?.href, let qtitle = question?.title {
+            let questionVC = QuestionDetailViewController()
+            questionVC.urlSuffix = qurl
+            questionVC.title = qtitle
+            navigationController?.pushViewController(questionVC, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 
 }
