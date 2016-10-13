@@ -15,30 +15,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var page = 0
     var questionList: [QuestionListModel]?
 
-    private var _tableview: UITableView!
-    private var tableview: UITableView {
-        if (_tableview != nil) {
-            return _tableview
+    private var _tableView: UITableView!
+    private var tableView: UITableView {
+        if (_tableView != nil) {
+            return _tableView
         }
-        _tableview = UITableView()
-        _tableview.separatorStyle = .none
-        _tableview.register(QuestionListTableViewCell.self,
+        _tableView = UITableView()
+        _tableView.separatorStyle = .none
+        _tableView.register(QuestionListTableViewCell.self,
                             forCellReuseIdentifier: QuestionListTableViewCell.description())
-        _tableview.delegate = self
-        _tableview.dataSource = self
-        return _tableview
+        _tableView.delegate = self
+        _tableView.dataSource = self
+        return _tableView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "LeetCodeX"
         setupNavigationItem()
-        view.addSubview(tableview)
-        tableview.snp.makeConstraints {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
             (make) -> Void in
             make.top.bottom.left.right.equalTo(self.view)
         }
-        tableview.mj_header = LCXRefreshHeader(refreshingBlock: {
+        tableView.mj_header = LCXRefreshHeader(refreshingBlock: {
             [weak self] () -> Void in
             self?.refresh()
         })
@@ -76,14 +76,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             (response: LCXValueResponse<[QuestionListModel]>) -> Void in
             if response.success {
                 self.questionList = response.value
-                self.tableview.reloadData()
+                self.tableView.reloadData()
                 self.page = 0
             }
-            self.tableview.mj_header.endRefreshing()
+            self.tableView.mj_header.endRefreshing()
         }
     }
     func refreshLists() {
-        tableview.mj_header.beginRefreshing()
+        tableView.mj_header.beginRefreshing()
     }
     
     // MARK - UITableView Protocals
@@ -100,10 +100,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let question = questionList?[indexPath.row]
-        if let qurl = question?.href, let qtitle = question?.title {
+        if let qurlSuffix = question?.urlName, let qtitle = question?.title, let discussSuffix = question?.href {
             let questionVC = QuestionDetailViewController()
-            questionVC.urlSuffix = qurl
+            questionVC.urlSuffix = qurlSuffix
             questionVC.title = qtitle
+            questionVC.discussUrlSuffix = discussSuffix
             navigationController?.pushViewController(questionVC, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         }
