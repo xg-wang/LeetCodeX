@@ -8,35 +8,33 @@
 
 import UIKit
 
-class ProblemDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProblemDetailViewController: UIViewController {
     
     // MARK: - Model
     var urlSuffix: String!
     var discussUrlSuffix: String!
-    var problemModel: ProblemDetailModel?
-    var discussionArray: [DiscussionModel]?
-
-    fileprivate var _tableView :UITableView!
-    fileprivate var tableView: UITableView {
-        get{
-            if(_tableView != nil){
-                return _tableView!;
-            }
-            _tableView = UITableView();
-            _tableView.separatorStyle = .none;
-            _tableView.register(ProblemDetailTableViewCell.self, forCellReuseIdentifier: ProblemDetailTableViewCell.description())
-            _tableView.register(DiscussionTableViewCell.self, forCellReuseIdentifier: DiscussionTableViewCell.description())
-            _tableView.delegate = self
-            _tableView.dataSource = self
-            return _tableView!;
+    var problemModel: ProblemDetailModel? {
+        didSet {
+            updateUI()
         }
+    }
+    var discussionArray: [DiscussionModel]?
+    
+    // MARK: - View
+    var _textView: UITextView!
+    var textView: UITextView {
+        if (_textView != nil) {
+            return _textView
+        }
+        _textView = UITextView()
+        return _textView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints {
+        view.addSubview(textView)
+        textView.snp.makeConstraints {
             (make) -> Void in
             make.top.bottom.left.right.equalTo(self.view)
         }
@@ -48,7 +46,7 @@ class ProblemDetailViewController: UIViewController, UITableViewDelegate, UITabl
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(ProblemDetailViewController.rightClick), for: .touchUpInside)
 
-        refreshAll()
+        refreshProblem()
     }
     @objc fileprivate func rightClick() {
         
@@ -59,46 +57,12 @@ class ProblemDetailViewController: UIViewController, UITableViewDelegate, UITabl
             if response.success {
                 self.problemModel = response.value
                 self.problemModel?.title = self.title
-                self.tableView.reloadData()
             }
         }
-    }
-    fileprivate func refreshDiscussion() {
-        DiscussionModel.requestDiscussion(urlSuffix: discussUrlSuffix) {
-            (response: LCXValueResponse<[DiscussionModel]>) -> Void in
-            if response.success {
-                self.discussionArray = response.value
-                self.tableView.reloadData()
-            }
-        }
-    }
-    func refreshAll() {
-        refreshProblem()
-        refreshDiscussion()
     }
     
-    // MARK: - TableView Protocols
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    func updateUI() {
+        textView.attributedText = problemModel?.HTMLcontent?.attributedStringFromHTML
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch problemDetialSectionsEnum(rawValue: section)! {
-        case .problem:
-            return 3
-        case .comments:
-            return discussionArray?.count ?? 0
-        }
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO!!!
-        let cell = UITableViewCell()
-        return cell
-    }
-}
-
-enum problemDetialSectionsEnum: Int {
-    case problem = 0, comments
-}
-enum problemComponentsENum: Int {
-    case content = 0, info, tags
+    
 }
