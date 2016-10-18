@@ -9,6 +9,7 @@
 import Foundation
 
 let LeetCodeDiscussURL = "https://discuss.leetcode.com/"
+let LeetCodeProblemsURL = "https://leetcode.com/problems/"
 
 func getGroups(in str: String, with pattern: String) -> [String] {
     let regex = try? NSRegularExpression(pattern: pattern, options: [])

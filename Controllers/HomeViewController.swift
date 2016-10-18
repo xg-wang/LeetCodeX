@@ -13,7 +13,7 @@ import MJRefresh
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var category: String?
     var page = 0
-    var questionList: [QuestionListModel]?
+    var problemList: [ProblemListModel]?
 
     private var _tableView: UITableView!
     private var tableView: UITableView {
@@ -22,8 +22,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         _tableView = UITableView()
         _tableView.separatorStyle = .none
-        _tableView.register(QuestionListTableViewCell.self,
-                            forCellReuseIdentifier: QuestionListTableViewCell.description())
+        _tableView.register(ProblemListTableViewCell.self,
+                            forCellReuseIdentifier: ProblemListTableViewCell.description())
         _tableView.delegate = self
         _tableView.dataSource = self
         return _tableView
@@ -72,10 +72,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if category == nil {
             category = "oj"
         }
-        QuestionListModel.requestList(category: category!) {
-            (response: LCXValueResponse<[QuestionListModel]>) -> Void in
+        ProblemListModel.requestList(category: category!) {
+            (response: LCXValueResponse<[ProblemListModel]>) -> Void in
             if response.success {
-                self.questionList = response.value
+                self.problemList = response.value
                 self.tableView.reloadData()
                 self.page = 0
             }
@@ -88,24 +88,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK - UITableView Protocals
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let questions = questionList {
-            return questions.count
+        if let problems = problemList {
+            return problems.count
         }
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionListTableViewCell.description(), for: indexPath) as! QuestionListTableViewCell
-        cell.bind(question: questionList![indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProblemListTableViewCell.description(), for: indexPath) as! ProblemListTableViewCell
+        cell.bind(problem: problemList![indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let question = questionList?[indexPath.row]
-        if let qurlSuffix = question?.urlName, let qtitle = question?.title, let discussSuffix = question?.href {
-            let questionVC = QuestionDetailViewController()
-            questionVC.urlSuffix = qurlSuffix
-            questionVC.title = qtitle
-            questionVC.discussUrlSuffix = discussSuffix
-            navigationController?.pushViewController(questionVC, animated: true)
+        let problem = problemList?[indexPath.row]
+        if let qurlSuffix = problem?.urlName, let qtitle = problem?.title, let discussSuffix = problem?.href {
+            let problemVC = ProblemDetailViewController()
+            problemVC.urlSuffix = qurlSuffix
+            problemVC.title = qtitle
+            problemVC.discussUrlSuffix = discussSuffix
+            navigationController?.pushViewController(problemVC, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }

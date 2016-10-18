@@ -1,5 +1,5 @@
 //
-//  QuestionDetailViewController.swift
+//  ProblemDetailViewController.swift
 //  LeetCodeX
 //
 //  Created by Xingan Wang on 10/11/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProblemDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Model
     var urlSuffix: String!
     var discussUrlSuffix: String!
-    var questionModel: QuestionDetailModel?
+    var problemModel: ProblemDetailModel?
     var discussionArray: [DiscussionModel]?
 
     fileprivate var _tableView :UITableView!
@@ -24,7 +24,7 @@ class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITab
             }
             _tableView = UITableView();
             _tableView.separatorStyle = .none;
-            _tableView.register(QuestionDetailTableViewCell.self, forCellReuseIdentifier: QuestionDetailTableViewCell.description())
+            _tableView.register(ProblemDetailTableViewCell.self, forCellReuseIdentifier: ProblemDetailTableViewCell.description())
             _tableView.register(DiscussionTableViewCell.self, forCellReuseIdentifier: DiscussionTableViewCell.description())
             _tableView.delegate = self
             _tableView.dataSource = self
@@ -46,18 +46,19 @@ class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITab
         rightButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -15)
         rightButton.setImage(UIImage(named: "ic_more_horiz_36pt")?.withRenderingMode(.alwaysTemplate), for: .normal)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
-        rightButton.addTarget(self, action: #selector(QuestionDetailViewController.rightClick), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(ProblemDetailViewController.rightClick), for: .touchUpInside)
 
         refreshAll()
     }
     @objc fileprivate func rightClick() {
         
     }
-    fileprivate func refreshQuestion() {
-        QuestionDetailModel.requestDetail(urlName: urlSuffix) {
-            (response: LCXValueResponse<QuestionDetailModel>) -> Void in
+    fileprivate func refreshProblem() {
+        ProblemDetailModel.requestDetail(urlName: urlSuffix) {
+            (response: LCXValueResponse<ProblemDetailModel>) -> Void in
             if response.success {
-                self.questionModel = response.value
+                self.problemModel = response.value
+                self.problemModel?.title = self.title
                 self.tableView.reloadData()
             }
         }
@@ -72,7 +73,7 @@ class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     func refreshAll() {
-        refreshQuestion()
+        refreshProblem()
         refreshDiscussion()
     }
     
@@ -81,8 +82,8 @@ class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITab
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch questionDetialSectionsEnum(rawValue: section)! {
-        case .question:
+        switch problemDetialSectionsEnum(rawValue: section)! {
+        case .problem:
             return 3
         case .comments:
             return discussionArray?.count ?? 0
@@ -95,9 +96,9 @@ class QuestionDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
 }
 
-enum questionDetialSectionsEnum: Int {
-    case question = 0, comments
+enum problemDetialSectionsEnum: Int {
+    case problem = 0, comments
 }
-enum questionComponentsENum: Int {
+enum problemComponentsENum: Int {
     case content = 0, info, tags
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		532938701DAF527500235BFF /* QuestionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5329386F1DAF527500235BFF /* QuestionDetailTableViewCell.swift */; };
+		532938701DAF527500235BFF /* ProblemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5329386F1DAF527500235BFF /* ProblemDetailTableViewCell.swift */; };
 		532938721DAF528700235BFF /* DiscussionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532938711DAF528700235BFF /* DiscussionTableViewCell.swift */; };
 		532938741DAF590900235BFF /* DiscussionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532938731DAF590900235BFF /* DiscussionModel.swift */; };
 		5377F7B01DACBB4100CB98A8 /* LCXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5377F7AF1DACBB4100CB98A8 /* LCXResponse.swift */; };
@@ -16,8 +16,8 @@
 		53871F291DAB5694002459AD /* LCXSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53871F281DAB5694002459AD /* LCXSettings.swift */; };
 		53871F2B1DAB56E0002459AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53871F2A1DAB56E0002459AD /* Assets.xcassets */; };
 		53871F2E1DAB56FC002459AD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53871F2D1DAB56FC002459AD /* UIImageExtension.swift */; };
-		53B850541DAE0FCC00145652 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B850531DAE0FCC00145652 /* QuestionDetailViewController.swift */; };
-		53B850561DAE22A700145652 /* QuestionDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B850551DAE22A700145652 /* QuestionDetailModel.swift */; };
+		53B850541DAE0FCC00145652 /* ProblemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B850531DAE0FCC00145652 /* ProblemDetailViewController.swift */; };
+		53B850561DAE22A700145652 /* ProblemDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B850551DAE22A700145652 /* ProblemDetailModel.swift */; };
 		53CC00081DAAABD2008E3223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00071DAAABD2008E3223 /* AppDelegate.swift */; };
 		53CC000A1DAAABD2008E3223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00091DAAABD2008E3223 /* ViewController.swift */; };
 		53CC000D1DAAABD2008E3223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CC000B1DAAABD2008E3223 /* Main.storyboard */; };
@@ -28,25 +28,25 @@
 		53CC00281DAAF777008E3223 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00271DAAF777008E3223 /* LeftViewController.swift */; };
 		53CC002A1DAAF785008E3223 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00291DAAF785008E3223 /* RightViewController.swift */; };
 		53CC002C1DAAF979008E3223 /* LCXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC002B1DAAF979008E3223 /* LCXClient.swift */; };
-		53CC002E1DAB39E7008E3223 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC002D1DAB39E7008E3223 /* QuestionListTableViewCell.swift */; };
-		53CC00321DAB4666008E3223 /* QuestionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00311DAB4666008E3223 /* QuestionListModel.swift */; };
+		53CC002E1DAB39E7008E3223 /* ProblemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC002D1DAB39E7008E3223 /* ProblemListTableViewCell.swift */; };
+		53CC00321DAB4666008E3223 /* ProblemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00311DAB4666008E3223 /* ProblemListModel.swift */; };
 		53CC00341DAB4CF9008E3223 /* LCXRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00331DAB4CF9008E3223 /* LCXRefreshHeader.swift */; };
 		AAE654DC8F62BBC6FF435915 /* Pods_LeetCodeX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1125882308A888610E9FC681 /* Pods-LeetCodeX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.debug.xcconfig"; sourceTree = "<group>"; };
-		5329386F1DAF527500235BFF /* QuestionDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5329386F1DAF527500235BFF /* ProblemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProblemDetailTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		532938711DAF528700235BFF /* DiscussionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionTableViewCell.swift; sourceTree = "<group>"; };
-		532938731DAF590900235BFF /* DiscussionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionModel.swift; sourceTree = "<group>"; };
+		532938731DAF590900235BFF /* DiscussionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DiscussionModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5377F7AF1DACBB4100CB98A8 /* LCXResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXResponse.swift; sourceTree = "<group>"; };
 		5377F7B11DAD47B000CB98A8 /* LCXGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXGlobals.swift; sourceTree = "<group>"; };
 		5377F7B31DAD535200CB98A8 /* RequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExtension.swift; sourceTree = "<group>"; };
 		53871F281DAB5694002459AD /* LCXSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXSettings.swift; sourceTree = "<group>"; };
 		53871F2A1DAB56E0002459AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53871F2D1DAB56FC002459AD /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		53B850531DAE0FCC00145652 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
-		53B850551DAE22A700145652 /* QuestionDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailModel.swift; sourceTree = "<group>"; };
+		53B850531DAE0FCC00145652 /* ProblemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProblemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		53B850551DAE22A700145652 /* ProblemDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProblemDetailModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		53CC00041DAAABD2008E3223 /* LeetCodeX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCodeX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CC00071DAAABD2008E3223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CC00091DAAABD2008E3223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,12 +55,12 @@
 		53CC00141DAAABD2008E3223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53CC00161DAAABD2008E3223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CC00231DAAF600008E3223 /* LCXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXNavigationController.swift; sourceTree = "<group>"; };
-		53CC00251DAAF683008E3223 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		53CC00251DAAF683008E3223 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		53CC00271DAAF777008E3223 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		53CC00291DAAF785008E3223 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		53CC002B1DAAF979008E3223 /* LCXClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXClient.swift; sourceTree = "<group>"; };
-		53CC002D1DAB39E7008E3223 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
-		53CC00311DAB4666008E3223 /* QuestionListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListModel.swift; sourceTree = "<group>"; };
+		53CC002D1DAB39E7008E3223 /* ProblemListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemListTableViewCell.swift; sourceTree = "<group>"; };
+		53CC00311DAB4666008E3223 /* ProblemListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProblemListModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		53CC00331DAB4CF9008E3223 /* LCXRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LCXRefreshHeader.swift; path = Control/LCXRefreshHeader.swift; sourceTree = "<group>"; };
 		90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeetCodeX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				53CC00251DAAF683008E3223 /* HomeViewController.swift */,
-				53B850531DAE0FCC00145652 /* QuestionDetailViewController.swift */,
+				53B850531DAE0FCC00145652 /* ProblemDetailViewController.swift */,
 				53CC00271DAAF777008E3223 /* LeftViewController.swift */,
 				53CC00291DAAF785008E3223 /* RightViewController.swift */,
 			);
@@ -135,8 +135,8 @@
 		53CC00201DAAF36C008E3223 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				53CC00311DAB4666008E3223 /* QuestionListModel.swift */,
-				53B850551DAE22A700145652 /* QuestionDetailModel.swift */,
+				53CC00311DAB4666008E3223 /* ProblemListModel.swift */,
+				53B850551DAE22A700145652 /* ProblemDetailModel.swift */,
 				532938731DAF590900235BFF /* DiscussionModel.swift */,
 			);
 			path = Models;
@@ -154,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				53CC00351DAB4D02008E3223 /* Control */,
-				53CC002D1DAB39E7008E3223 /* QuestionListTableViewCell.swift */,
-				5329386F1DAF527500235BFF /* QuestionDetailTableViewCell.swift */,
+				53CC002D1DAB39E7008E3223 /* ProblemListTableViewCell.swift */,
+				5329386F1DAF527500235BFF /* ProblemDetailTableViewCell.swift */,
 				532938711DAF528700235BFF /* DiscussionTableViewCell.swift */,
 			);
 			path = Views;
@@ -330,8 +330,8 @@
 				53CC00341DAB4CF9008E3223 /* LCXRefreshHeader.swift in Sources */,
 				53CC002C1DAAF979008E3223 /* LCXClient.swift in Sources */,
 				53CC00261DAAF683008E3223 /* HomeViewController.swift in Sources */,
-				53CC00321DAB4666008E3223 /* QuestionListModel.swift in Sources */,
-				53CC002E1DAB39E7008E3223 /* QuestionListTableViewCell.swift in Sources */,
+				53CC00321DAB4666008E3223 /* ProblemListModel.swift in Sources */,
+				53CC002E1DAB39E7008E3223 /* ProblemListTableViewCell.swift in Sources */,
 				5377F7B41DAD535200CB98A8 /* RequestExtension.swift in Sources */,
 				53CC002A1DAAF785008E3223 /* RightViewController.swift in Sources */,
 				53CC000A1DAAABD2008E3223 /* ViewController.swift in Sources */,
@@ -339,11 +339,11 @@
 				532938741DAF590900235BFF /* DiscussionModel.swift in Sources */,
 				532938721DAF528700235BFF /* DiscussionTableViewCell.swift in Sources */,
 				53871F2E1DAB56FC002459AD /* UIImageExtension.swift in Sources */,
-				532938701DAF527500235BFF /* QuestionDetailTableViewCell.swift in Sources */,
-				53B850561DAE22A700145652 /* QuestionDetailModel.swift in Sources */,
+				532938701DAF527500235BFF /* ProblemDetailTableViewCell.swift in Sources */,
+				53B850561DAE22A700145652 /* ProblemDetailModel.swift in Sources */,
 				53CC00281DAAF777008E3223 /* LeftViewController.swift in Sources */,
 				5377F7B21DAD47B000CB98A8 /* LCXGlobals.swift in Sources */,
-				53B850541DAE0FCC00145652 /* QuestionDetailViewController.swift in Sources */,
+				53B850541DAE0FCC00145652 /* ProblemDetailViewController.swift in Sources */,
 				53CC00101DAAABD2008E3223 /* LeetCodeX.xcdatamodeld in Sources */,
 				53CC00241DAAF600008E3223 /* LCXNavigationController.swift in Sources */,
 			);

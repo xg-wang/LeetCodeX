@@ -1,5 +1,5 @@
 //
-//  QuestionListTableViewCell.swift
+//  ProblemListTableViewCell.swift
 //  LeetCodeX
 //
 //  Created by Xingan Wang on 10/9/16.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class QuestionListTableViewCell: UITableViewCell {
+class ProblemListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func bind(question: QuestionListModel) {
-        textLabel?.text = question.title
+    func bind(problem: ProblemListModel) {
+        textLabel?.text = problem.title
     }
 
 }

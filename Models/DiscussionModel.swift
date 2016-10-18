@@ -13,25 +13,17 @@ import Alamofire
 class DiscussionModel: NSObject {
     var title: String?
     var href: String?
-    var questiongId: String?
+    var problemgId: String?
     var urlName: String?
     var backgroundColorHex: String?
     
     init(rootNode: JiNode) {
         super.init()
-        title = rootNode.xPath("./div/h2[@class='title']/a").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines)
-        href  = rootNode.xPath("./div/h2[@class='title']/a").first?["href"]
-        if let hrefString = href {
-            let groups = getGroups(in: hrefString, with: questionListPattern)
-            questiongId = groups[1]
-            urlName = groups[2]
-        }
-        // TODO: background-color
     }
     
     // MARK - Model Related Request
     class func requestDiscussion(
-        urlSuffix: String?,
+        urlSuffix: String,
         completionHandler: @escaping (LCXValueResponse<[DiscussionModel]>) -> Void
     ) {
 
