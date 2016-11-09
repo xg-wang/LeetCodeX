@@ -11,6 +11,7 @@
 		532938721DAF528700235BFF /* DiscussionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532938711DAF528700235BFF /* DiscussionTableViewCell.swift */; };
 		532938741DAF590900235BFF /* DiscussionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532938731DAF590900235BFF /* DiscussionModel.swift */; };
 		533A978D1DB698D100B299C5 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A978C1DB698D100B299C5 /* StringExtention.swift */; };
+		533A978F1DB6A5A900B299C5 /* ProblemTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A978E1DB6A5A900B299C5 /* ProblemTabBarViewController.swift */; };
 		5377F7B01DACBB4100CB98A8 /* LCXResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5377F7AF1DACBB4100CB98A8 /* LCXResponse.swift */; };
 		5377F7B21DAD47B000CB98A8 /* LCXGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5377F7B11DAD47B000CB98A8 /* LCXGlobals.swift */; };
 		5377F7B41DAD535200CB98A8 /* RequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5377F7B31DAD535200CB98A8 /* RequestExtension.swift */; };
@@ -32,6 +33,7 @@
 		53CC002E1DAB39E7008E3223 /* ProblemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC002D1DAB39E7008E3223 /* ProblemListTableViewCell.swift */; };
 		53CC00321DAB4666008E3223 /* ProblemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00311DAB4666008E3223 /* ProblemListModel.swift */; };
 		53CC00341DAB4CF9008E3223 /* LCXRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CC00331DAB4CF9008E3223 /* LCXRefreshHeader.swift */; };
+		53EDD2EA1DB6ED17004D8E08 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EDD2E91DB6ED17004D8E08 /* DiscussionViewController.swift */; };
 		AAE654DC8F62BBC6FF435915 /* Pods_LeetCodeX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,7 @@
 		532938711DAF528700235BFF /* DiscussionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionTableViewCell.swift; sourceTree = "<group>"; };
 		532938731DAF590900235BFF /* DiscussionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DiscussionModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		533A978C1DB698D100B299C5 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		533A978E1DB6A5A900B299C5 /* ProblemTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemTabBarViewController.swift; sourceTree = "<group>"; };
 		5377F7AF1DACBB4100CB98A8 /* LCXResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXResponse.swift; sourceTree = "<group>"; };
 		5377F7B11DAD47B000CB98A8 /* LCXGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCXGlobals.swift; sourceTree = "<group>"; };
 		5377F7B31DAD535200CB98A8 /* RequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExtension.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		53CC002D1DAB39E7008E3223 /* ProblemListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemListTableViewCell.swift; sourceTree = "<group>"; };
 		53CC00311DAB4666008E3223 /* ProblemListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProblemListModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		53CC00331DAB4CF9008E3223 /* LCXRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LCXRefreshHeader.swift; path = Control/LCXRefreshHeader.swift; sourceTree = "<group>"; };
+		53EDD2E91DB6ED17004D8E08 /* DiscussionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
 		90D76F32B692C3DB09BAECC5 /* Pods_LeetCodeX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeetCodeX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50A912C2A9A62E6BD177131 /* Pods-LeetCodeX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeetCodeX.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeetCodeX/Pods-LeetCodeX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,7 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				53CC00251DAAF683008E3223 /* HomeViewController.swift */,
+				533A978E1DB6A5A900B299C5 /* ProblemTabBarViewController.swift */,
 				53B850531DAE0FCC00145652 /* ProblemDetailViewController.swift */,
+				53EDD2E91DB6ED17004D8E08 /* DiscussionViewController.swift */,
 				53CC00271DAAF777008E3223 /* LeftViewController.swift */,
 				53CC00291DAAF785008E3223 /* RightViewController.swift */,
 			);
@@ -339,6 +345,8 @@
 				53CC002A1DAAF785008E3223 /* RightViewController.swift in Sources */,
 				53CC000A1DAAABD2008E3223 /* ViewController.swift in Sources */,
 				53CC00081DAAABD2008E3223 /* AppDelegate.swift in Sources */,
+				533A978F1DB6A5A900B299C5 /* ProblemTabBarViewController.swift in Sources */,
+				53EDD2EA1DB6ED17004D8E08 /* DiscussionViewController.swift in Sources */,
 				533A978D1DB698D100B299C5 /* StringExtention.swift in Sources */,
 				532938741DAF590900235BFF /* DiscussionModel.swift in Sources */,
 				532938721DAF528700235BFF /* DiscussionTableViewCell.swift in Sources */,

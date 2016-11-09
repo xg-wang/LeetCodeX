@@ -100,14 +100,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let problem = problemList?[indexPath.row]
-        if let qurlSuffix = problem?.urlName, let qtitle = problem?.title, let discussSuffix = problem?.href {
+        if let qurlSuffix = problem?.urlName, let qtitle = problem?.title {
             let problemVC = ProblemDetailViewController()
             problemVC.urlSuffix = qurlSuffix
             problemVC.title = qtitle
-            problemVC.discussUrlSuffix = discussSuffix
             navigationController?.pushViewController(problemVC, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let problem = problemList?[indexPath.row]
+//        if let qurlSuffix = problem?.urlName, let qtitle = problem?.title, let discussSuffix = problem?.href {
+//            let problemTabBarVC = ProblemTabBarViewController()
+//            problemTabBarVC.urlSuffix = qurlSuffix
+//            problemTabBarVC.title = qtitle
+//            problemTabBarVC.discussUrlSuffix = discussSuffix
+//            navigationController?.pushViewController(problemTabBarVC, animated: true)
+//            tableView.deselectRow(at: indexPath, animated: true)
+//        }
+//    }
 
 }

@@ -13,15 +13,22 @@ let LeetCodeProblemsURL = "https://leetcode.com/problems/"
 
 func getGroups(in str: String, with pattern: String) -> [String] {
     let regex = try? NSRegularExpression(pattern: pattern, options: [])
-    
     let matchGroup = regex?.firstMatch(in: str, options: [], range: NSMakeRange(0, str.characters.count))
-    
     var groupMatches = [String]()
-    
     if let groups = matchGroup {
         for group in 0..<groups.numberOfRanges {
             groupMatches.append((str as NSString).substring(with: groups.rangeAt(group)))
         }
     }
     return groupMatches
+}
+
+func getFirsrMatch(in str: String, with pattern: String) -> String {
+    let regex = try? NSRegularExpression(pattern: pattern, options: [])
+    if let range = regex?.rangeOfFirstMatch(in: str, options: [], range: NSMakeRange(0, str.characters.count)) {
+        if !NSEqualRanges(range, NSMakeRange(NSNotFound, 0)) {
+            return (str as NSString).substring(with: range)
+        }
+    }
+    return ""
 }

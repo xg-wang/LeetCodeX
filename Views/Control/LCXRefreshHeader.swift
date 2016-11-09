@@ -38,8 +38,8 @@ class LCXRefreshHeader: MJRefreshHeader {
         super.prepare()
         mj_h = 50
         
-        loadingView = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        addSubview(self.loadingView!)
+        loadingView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        addSubview(loadingView!)
         refreshImage = UIImageView(image: UIImage(named: "ic_refresh")?.withRenderingMode(.alwaysTemplate))
         addSubview(refreshImage!)
     }
